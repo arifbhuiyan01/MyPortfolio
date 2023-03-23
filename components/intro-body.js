@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 
 function IntroBody() {
   return (
-    <Box sx={{ height: "91vh" }}>
+    <Box sx={{ height: "100vh" }}>
       <Box
         sx={{
           display: "flex",

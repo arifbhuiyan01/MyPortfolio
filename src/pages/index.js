@@ -2,6 +2,7 @@ import Head from "next/head";
 import Box from "@mui/material/Box";
 import IntroBody from "../../components/intro-body";
 import Navbar from "../../components/navbar";
+import About from "../../components/about";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       </Box>
 
       <IntroBody />
+      <About />
     </>
   );
 }
