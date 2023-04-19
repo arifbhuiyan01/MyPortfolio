@@ -16,12 +16,28 @@ function IntroBody() {
         }}
       >
         <Box>
-          <Typography sx={{ fontWeight: "bold", textAlign: "center" }} variant="h2">
+          <Typography
+            sx={{
+              fontWeight: "bold",
+              textAlign: "center",
+              fontSize: { xs: 35, sm: 35, md: 50, xl: 60 },
+              px: 1,
+            }}
+            variant="h2"
+          >
             HEY, I'M ARIF RAHMAN BHUIYAN
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             {" "}
-            <Typography sx={{ width: "800px", textAlign: "center", mt: 5 }} variant="h6">
+            <Typography
+              sx={{
+                width: { xs: "100%", sm: "520px", xl: "800px" },
+                textAlign: "center",
+                mt: 5,
+                px: { xs: 5 },
+              }}
+              variant="h6"
+            >
               A Frontend focused Web Developer building the Frontend of Websites and Web
               Applications that leads to the success of the overall product
             </Typography>

@@ -13,13 +13,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Box sx={{ overflow: "hidden" }}>
+        <Box sx={{ width: "100%", position: "fixed", zIndex: 50 }}>
+          <Navbar />
+        </Box>
 
-      <Box sx={{ width: "100%", position: "fixed", zIndex: 50 }}>
-        <Navbar />
+        <IntroBody />
+        <About />
       </Box>
-
-      <IntroBody />
-      <About />
     </>
   );
 }
