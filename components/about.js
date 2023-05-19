@@ -6,7 +6,7 @@ import Divider from "@mui/material/Divider";
 
 function About() {
   return (
-    <Box sx={{ bgcolor: "#F7F7F7", height: "92vh", px: "225px" }}>
+    <Box sx={{ bgcolor: "#F7F7F7", px: { xs: 2, lg: "225px" } }}>
       <Typography
         variant="h4"
         sx={{ fontWeight: "bold", letterSpacing: 3, textAlign: "center", pt: 12 }}
@@ -25,8 +25,8 @@ function About() {
           terms of programming and technology
         </Typography>
       </Box>
-      <Box sx={{ display: "flex", mt: 12, gap: 15 }}>
-        <Box sx={{ width: "50%" }}>
+      <Box sx={{ display: { md: "flex" }, mt: 12, gap: { lg: 15 } }}>
+        <Box sx={{ width: { md: "50%" } }}>
           <Typography variant="h4" sx={{ mb: 3 }}>
             Get to know me!
           </Typography>
@@ -50,7 +50,7 @@ function About() {
               fontWeight: "bold",
               px: 4,
               py: 2,
-              mt: 5,
+              my: 5,
               "&:hover": {
                 color: "black",
                 backgroundColor: "#FACF0F",
@@ -61,7 +61,7 @@ function About() {
           </Button>
         </Box>
 
-        <Box sx={{ width: "50%" }}>
+        <Box sx={{ width: { md: "50%" } }}>
           <Box>
             <Typography
               sx={{
@@ -71,6 +71,7 @@ function About() {
                 py: 1,
                 borderRadius: 1,
                 mr: 2,
+                my: 1,
               }}
             >
               HTML
@@ -105,7 +106,7 @@ function About() {
               React
             </Typography>
           </Box>
-          <Box sx={{ mt: 2 }}>
+          <Box sx={{ mt: 1 }}>
             <Typography
               sx={{
                 bgcolor: "#E7E7E7",
@@ -114,6 +115,7 @@ function About() {
                 py: 1,
                 borderRadius: 1,
                 mr: 2,
+                my: 1,
               }}
             >
               Next.js
@@ -148,7 +150,7 @@ function About() {
               SASS
             </Typography>
           </Box>
-          <Box sx={{ mt: 2 }}>
+          <Box sx={{ mt: 1 }}>
             <Typography
               sx={{
                 bgcolor: "#E7E7E7",
@@ -157,6 +159,7 @@ function About() {
                 py: 1,
                 borderRadius: 1,
                 mr: 2,
+                my: 1,
               }}
             >
               GIT
