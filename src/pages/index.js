@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import IntroBody from "../../components/intro-body";
 import Navbar from "../../components/navbar";
 import About from "../../components/about";
+import Project from "../../components/project";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
 
         <IntroBody />
         <About />
+        <Project />
       </Box>
     </>
   );
