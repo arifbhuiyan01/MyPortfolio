@@ -5,6 +5,7 @@ import Navbar from "../../components/navbar";
 import About from "../../components/about";
 import Project from "../../components/project";
 import Contact from "../../components/contact";
+import Footer from "../../components/footer";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <About />
         <Project />
         <Contact />
+        <Footer />
       </Box>
     </>
   );
