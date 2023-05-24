@@ -1,7 +1,46 @@
 import { Box, Button, Divider, TextField, Typography } from "@mui/material";
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
 function Contact() {
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    body: "",
+  });
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    let info = {
+      user_name: data.name,
+      user_email: data.email,
+      message: data.body,
+    };
+
+    emailjs.send("service_q600krg", "template_oymuq0a", info, "p1RpOJlO0qy5R_NZS").then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      },
+    );
+    console.log(info);
+
+    setData({ name: "", email: "", body: "" });
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setData((prevData) => {
+      const newData = { ...prevData };
+      newData[`${name}`] = value;
+      return newData;
+    });
+  };
+
   return (
     <Box>
       <Typography
@@ -31,6 +70,7 @@ function Contact() {
       <Box sx={{ display: "flex", justifyContent: "center", mb: 15, mt: 6 }}>
         <Box sx={{ bgcolor: "white", width: "45%", borderRadius: 4 }}>
           <form
+            onSubmit={sendEmail}
             style={{
               display: "flex",
 
@@ -43,12 +83,18 @@ function Contact() {
               id="outlined-basic"
               label="Name"
               variant="outlined"
+              name="name"
+              value={data.name}
+              onChange={(event) => handleChange(event)}
             />
             <TextField
               sx={{ bgcolor: "#F0F0F0", width: "80%", mt: 6 }}
               id="outlined-basic"
               label="Email"
               variant="outlined"
+              name="email"
+              value={data.email}
+              onChange={(event) => handleChange(event)}
             />
             <TextField
               sx={{ bgcolor: "#F0F0F0", width: "80%", mt: 6 }}
@@ -57,9 +103,13 @@ function Contact() {
               variant="outlined"
               rows={10}
               multiline
+              name="body"
+              value={data.body}
+              onChange={(event) => handleChange(event)}
             />
             <Button
               variant="contained"
+              type="submit"
               sx={{
                 bgcolor: "#FACF0F",
                 letterSpacing: 2,
