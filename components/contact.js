@@ -124,7 +124,7 @@ function Contact() {
                 },
               }}
             >
-              See details
+              SUBMIT
             </Button>
           </form>
         </Box>
