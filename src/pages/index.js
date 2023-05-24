@@ -4,6 +4,7 @@ import IntroBody from "../../components/intro-body";
 import Navbar from "../../components/navbar";
 import About from "../../components/about";
 import Project from "../../components/project";
+import Contact from "../../components/contact";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <IntroBody />
         <About />
         <Project />
+        <Contact />
       </Box>
     </>
   );
