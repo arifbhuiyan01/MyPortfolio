@@ -1,5 +1,8 @@
 import React from "react";
 
+import Link from "react-scroll/modules/components/Link";
+import * as Scroll from "react-scroll";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -16,6 +19,7 @@ import avatar from "../public/image/avatar.jpg";
 const pages = ["Home", "About", "Project", "Contact"];
 
 function Navbar() {
+  const scroller = Scroll.scroller;
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -24,6 +28,16 @@ function Navbar() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const scrollToSection = (destination, ofset) => {
+    scroller.scrollTo(`${destination}`, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: ofset,
+    });
+    console.log(destination);
   };
 
   return (
@@ -109,22 +123,25 @@ function Navbar() {
             }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  m: 2,
-                  color: "white",
-                  display: "block",
-                  color: "black",
-                  "&:hover": {
-                    color: "#FACF0F",
-                    backgroundColor: "#FFFFFF",
-                  },
-                }}
-              >
-                {page}
-              </Button>
+              <Link to={""} key={page}>
+                <Button
+                  onClick={() => {
+                    scrollToSection(`${page}`, -100);
+                  }}
+                  sx={{
+                    m: 2,
+                    color: "white",
+                    display: "block",
+                    color: "black",
+                    "&:hover": {
+                      color: "#FACF0F",
+                      backgroundColor: "#FFFFFF",
+                    },
+                  }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
