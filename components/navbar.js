@@ -11,7 +11,7 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import avatar from "../../MyPortfolio/public/image/avatar.jpg";
+import avatar from "../public/image/avatar.jpg";
 
 const pages = ["Home", "About", "Project", "Contact"];
 
