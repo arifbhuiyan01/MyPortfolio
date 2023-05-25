@@ -25,7 +25,7 @@ function IntroBody() {
             }}
             variant="h2"
           >
-            HEY, I'M ARIF RAHMAN BHUIYAN
+            HEY, I&apos;M ARIF RAHMAN BHUIYAN
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             {" "}

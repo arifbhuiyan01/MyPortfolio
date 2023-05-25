@@ -1,7 +1,7 @@
 import { Box, Button, Divider, Typography } from "@mui/material";
 import React from "react";
-import bluecheck from "../../myportfolio/public/bluecheck.png";
-import ecom from "../../myportfolio/public/ecom.png";
+import bluecheck from "../public/bluecheck.png";
+import ecom from "../public/ecom.png";
 
 function Project() {
   return (
