@@ -11,6 +11,7 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
+import avatar from "../../MyPortfolio/public/image/avatar.jpg";
 
 const pages = ["Home", "About", "Project", "Contact"];
 
@@ -29,11 +30,7 @@ function Navbar() {
     <AppBar position="static" sx={{ bgcolor: "#FFFFFF", boxShadow: "none", height: "9vh" }}>
       <Container maxWidth="xl">
         <Toolbar sx={{ mt: 1.6 }} disableGutters>
-          <Avatar
-            alt="Remy Sharp"
-            src="/static/images/avatar/1.jpg"
-            sx={{ width: 40, height: 40, mr: 2 }}
-          />
+          <Avatar alt="Remy Sharp" src={avatar.src} sx={{ width: 40, height: 40, mr: 2 }} />
           <Typography
             variant="h6"
             noWrap
