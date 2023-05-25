@@ -2,10 +2,13 @@ import { Box, Button, Divider, Typography } from "@mui/material";
 import React from "react";
 import bluecheck from "../public/bluecheck.png";
 import ecom from "../public/ecom.png";
+import * as Scroll from "react-scroll";
+import Link from "react-scroll/modules/components/Link";
 
 function Project() {
+  const Element = Scroll.Element;
   return (
-    <>
+    <Element id="Project" name="Project">
       <Box sx={{ bgcolor: "#FFFFFF", px: { xs: 2, lg: "300px" } }}>
         <Typography
           variant="h3"
@@ -104,7 +107,7 @@ function Project() {
           </Box>
         </Box>
       </Box>
-    </>
+    </Element>
   );
 }
 

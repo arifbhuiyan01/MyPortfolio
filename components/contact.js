@@ -2,8 +2,11 @@ import { Box, Button, Divider, TextField, Typography } from "@mui/material";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import * as Scroll from "react-scroll";
+import Link from "react-scroll/modules/components/Link";
 
 function Contact() {
+  const Element = Scroll.Element;
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -42,94 +45,96 @@ function Contact() {
   };
 
   return (
-    <Box>
-      <Typography
-        variant="h3"
-        sx={{
-          fontWeight: "bold",
-          letterSpacing: 4,
-          textAlign: "center",
-          pt: 12,
-          textTransform: "capitalize",
-        }}
-      >
-        CONTACT
-      </Typography>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Divider
-          sx={{ width: "60px", borderBottomWidth: 5, bgcolor: "#FACF0F", mt: 2, mb: 2 }}
-          variant="middle"
-        />
-      </Box>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Typography variant="h6" sx={{ textAlign: "center", mt: 2, width: "700px", mb: 5 }}>
-          Feel free to Contact me by submitting the form below and I will get back to you as soon as
-          possible
+    <Element id="Contact" name="Contact">
+      <Box>
+        <Typography
+          variant="h3"
+          sx={{
+            fontWeight: "bold",
+            letterSpacing: 4,
+            textAlign: "center",
+            pt: 12,
+            textTransform: "capitalize",
+          }}
+        >
+          CONTACT
         </Typography>
-      </Box>
-      <Box sx={{ display: "flex", justifyContent: "center", mb: 15, mt: 6 }}>
-        <Box sx={{ bgcolor: "white", width: "45%", borderRadius: 4 }}>
-          <form
-            onSubmit={sendEmail}
-            style={{
-              display: "flex",
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Divider
+            sx={{ width: "60px", borderBottomWidth: 5, bgcolor: "#FACF0F", mt: 2, mb: 2 }}
+            variant="middle"
+          />
+        </Box>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Typography variant="h6" sx={{ textAlign: "center", mt: 2, width: "700px", mb: 5 }}>
+            Feel free to Contact me by submitting the form below and I will get back to you as soon
+            as possible
+          </Typography>
+        </Box>
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 15, mt: 6 }}>
+          <Box sx={{ bgcolor: "white", width: "45%", borderRadius: 4 }}>
+            <form
+              onSubmit={sendEmail}
+              style={{
+                display: "flex",
 
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <TextField
-              sx={{ bgcolor: "#F0F0F0", width: "80%", mt: 6 }}
-              id="outlined-basic"
-              label="Name"
-              variant="outlined"
-              name="name"
-              value={data.name}
-              onChange={(event) => handleChange(event)}
-            />
-            <TextField
-              sx={{ bgcolor: "#F0F0F0", width: "80%", mt: 6 }}
-              id="outlined-basic"
-              label="Email"
-              variant="outlined"
-              name="email"
-              value={data.email}
-              onChange={(event) => handleChange(event)}
-            />
-            <TextField
-              sx={{ bgcolor: "#F0F0F0", width: "80%", mt: 6 }}
-              id="outlined-basic"
-              label="Message"
-              variant="outlined"
-              rows={10}
-              multiline
-              name="body"
-              value={data.body}
-              onChange={(event) => handleChange(event)}
-            />
-            <Button
-              variant="contained"
-              type="submit"
-              sx={{
-                bgcolor: "#FACF0F",
-                letterSpacing: 2,
-                color: "black",
-                fontWeight: "bold",
-                px: 4,
-                py: 2,
-                my: 5,
-                "&:hover": {
-                  color: "black",
-                  backgroundColor: "#FACF0F",
-                },
+                flexDirection: "column",
+                alignItems: "center",
               }}
             >
-              SUBMIT
-            </Button>
-          </form>
+              <TextField
+                sx={{ bgcolor: "#F0F0F0", width: "80%", mt: 6 }}
+                id="outlined-basic"
+                label="Name"
+                variant="outlined"
+                name="name"
+                value={data.name}
+                onChange={(event) => handleChange(event)}
+              />
+              <TextField
+                sx={{ bgcolor: "#F0F0F0", width: "80%", mt: 6 }}
+                id="outlined-basic"
+                label="Email"
+                variant="outlined"
+                name="email"
+                value={data.email}
+                onChange={(event) => handleChange(event)}
+              />
+              <TextField
+                sx={{ bgcolor: "#F0F0F0", width: "80%", mt: 6 }}
+                id="outlined-basic"
+                label="Message"
+                variant="outlined"
+                rows={10}
+                multiline
+                name="body"
+                value={data.body}
+                onChange={(event) => handleChange(event)}
+              />
+              <Button
+                variant="contained"
+                type="submit"
+                sx={{
+                  bgcolor: "#FACF0F",
+                  letterSpacing: 2,
+                  color: "black",
+                  fontWeight: "bold",
+                  px: 4,
+                  py: 2,
+                  my: 5,
+                  "&:hover": {
+                    color: "black",
+                    backgroundColor: "#FACF0F",
+                  },
+                }}
+              >
+                SUBMIT
+              </Button>
+            </form>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </Element>
   );
 }
 
