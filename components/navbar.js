@@ -30,14 +30,19 @@ function Navbar() {
     setAnchorElNav(null);
   };
 
-  const scrollToSection = (destination, ofset) => {
+  const scrollToSection = (destination) => {
+    let off = {
+      Home: 0,
+      About: -70,
+      Project: -70,
+      Contact: -70,
+    };
     scroller.scrollTo(`${destination}`, {
       duration: 1500,
       delay: 100,
       smooth: true,
-      offset: ofset,
+      offset: off[destination],
     });
-    console.log(destination);
   };
 
   return (
@@ -126,7 +131,7 @@ function Navbar() {
               <Link to={""} key={page}>
                 <Button
                   onClick={() => {
-                    scrollToSection(`${page}`, -100);
+                    scrollToSection(`${page}`);
                   }}
                   sx={{
                     m: 2,
