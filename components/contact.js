@@ -4,8 +4,13 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import * as Scroll from "react-scroll";
 import Link from "react-scroll/modules/components/Link";
+import Modal from "@mui/material/Modal";
 
 function Contact() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const Element = Scroll.Element;
   const [data, setData] = useState({
     name: "",
@@ -25,12 +30,14 @@ function Contact() {
     emailjs.send("service_q600krg", "template_oymuq0a", info, "p1RpOJlO0qy5R_NZS").then(
       (result) => {
         console.log(result.text);
+        if (result.text == "OK") {
+          setOpen(true);
+        }
       },
       (error) => {
         console.log(error.text);
       },
     );
-    console.log(info);
 
     setData({ name: "", email: "", body: "" });
   };
@@ -144,6 +151,59 @@ function Contact() {
           </Box>
         </Box>
       </Box>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 500,
+
+            bgcolor: "background.paper",
+
+            boxShadow: 24,
+            p: 4,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <Typography id="modal-modal-title" variant="h4" component="h2">
+            Thanks for your feedback
+          </Typography>
+          <Typography id="modal-modal-description" variant="body2" sx={{ mt: 2 }}>
+            We will back to you as soon as possible
+          </Typography>
+          <Button
+            variant="contained"
+            sx={{
+              bgcolor: "#FACF0F",
+              letterSpacing: 2,
+              color: "black",
+              fontWeight: "bold",
+              px: 4,
+              py: 2,
+              my: 5,
+              "&:hover": {
+                color: "black",
+                backgroundColor: "#FACF0F",
+              },
+            }}
+            onClick={handleClose}
+          >
+            {" "}
+            close
+          </Button>
+        </Box>
+      </Modal>
     </Element>
   );
 }
