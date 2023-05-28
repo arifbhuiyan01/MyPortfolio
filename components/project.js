@@ -4,12 +4,13 @@ import bluecheck from "../public/bluecheck.png";
 import ecom from "../public/ecom.png";
 import * as Scroll from "react-scroll";
 import Link from "react-scroll/modules/components/Link";
+import Image from "next/image";
 
 function Project() {
   const Element = Scroll.Element;
   return (
     <Element id="Project" name="Project">
-      <Box sx={{ bgcolor: "#FFFFFF", px: { xs: 2, lg: "300px" } }}>
+      <Box sx={{ bgcolor: "#FFFFFF", px: "10%" }}>
         <Typography
           variant="h3"
           sx={{ fontWeight: "bold", letterSpacing: 4, textAlign: "center", pt: 12 }}
@@ -28,13 +29,13 @@ function Project() {
             terms of programming and technology
           </Typography>
         </Box>
-        <Box sx={{ py: 4, display: "flex", gap: 13 }}>
-          <img
+        <Box sx={{ py: 4, display: { lg: "flex" }, gap: 13 }}>
+          <Image
             style={{ boxShadow: 5 }}
             src={bluecheck.src}
             alt="bluecheck"
-            width="600px"
-            height="380px"
+            width={600}
+            height={380}
           />
           <Box sx={{ pt: 5 }}>
             <Typography variant="h4" sx={{ letterSpacing: 1, fontWeight: "bold" }}>
@@ -67,14 +68,8 @@ function Project() {
             </Button>
           </Box>
         </Box>
-        <Box sx={{ py: 6, display: "flex", gap: 13 }}>
-          <img
-            style={{ boxShadow: 5 }}
-            src={ecom.src}
-            alt="bluecheck"
-            width="600px"
-            height="380px"
-          />
+        <Box sx={{ py: 6, display: { lg: "flex" }, gap: 13 }}>
+          <Image src={ecom.src} alt="bluecheck" width={600} height={380} priority={true} />
           <Box sx={{ pt: 5 }}>
             <Typography variant="h4" sx={{ letterSpacing: 1, fontWeight: "bold" }}>
               E-commerce Site

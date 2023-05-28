@@ -35,7 +35,7 @@ function IntroBody() {
               {" "}
               <Typography
                 sx={{
-                  width: { xs: "100%", sm: "520px", xl: "800px" },
+                  width: { xs: "100%", sm: "520px", md: "800px" },
                   textAlign: "center",
                   mt: 5,
                   px: { xs: 5 },
