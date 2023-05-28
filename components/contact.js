@@ -89,6 +89,7 @@ function Contact() {
               }}
             >
               <TextField
+                required
                 sx={{ bgcolor: "#F0F0F0", width: "80%", mt: 6 }}
                 id="outlined-basic"
                 label="Name"
@@ -98,6 +99,8 @@ function Contact() {
                 onChange={(event) => handleChange(event)}
               />
               <TextField
+                required
+                type={"email"}
                 sx={{ bgcolor: "#F0F0F0", width: "80%", mt: 6 }}
                 id="outlined-basic"
                 label="Email"
@@ -107,6 +110,7 @@ function Contact() {
                 onChange={(event) => handleChange(event)}
               />
               <TextField
+                required
                 sx={{ bgcolor: "#F0F0F0", width: "80%", mt: 6 }}
                 id="outlined-basic"
                 label="Message"

@@ -5,9 +5,11 @@ import ecom from "../public/ecom.png";
 import * as Scroll from "react-scroll";
 import Link from "react-scroll/modules/components/Link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 function Project() {
   const Element = Scroll.Element;
+  const router = useRouter();
   return (
     <Element id="Project" name="Project">
       <Box sx={{ bgcolor: "#FFFFFF", px: "10%" }}>
@@ -49,6 +51,9 @@ function Project() {
               name, goods, and clients from counterfeiters.
             </Typography>
             <Button
+              onClick={() => {
+                router.push({ pathname: "/construction" });
+              }}
               variant="contained"
               sx={{
                 bgcolor: "#FACF0F",
@@ -82,6 +87,9 @@ function Project() {
               name, goods, and clients from counterfeiters.
             </Typography>
             <Button
+              onClick={() => {
+                router.push({ pathname: "/construction" });
+              }}
               variant="contained"
               sx={{
                 bgcolor: "#FACF0F",
