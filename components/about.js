@@ -10,7 +10,7 @@ function About() {
   const Element = Scroll.Element;
   return (
     <Element id="About" name="About">
-      <Box sx={{ bgcolor: "#F7F7F7", px: { xs: 2, lg: "225px" } }}>
+      <Box sx={{ bgcolor: "#F7F7F7", px: "10%" }}>
         <Typography
           variant="h4"
           sx={{ fontWeight: "bold", letterSpacing: 3, textAlign: "center", pt: 12 }}
@@ -29,8 +29,8 @@ function About() {
             terms of programming and technology
           </Typography>
         </Box>
-        <Box sx={{ display: { md: "flex" }, mt: 12, gap: { lg: 15 } }}>
-          <Box sx={{ width: { md: "50%" } }}>
+        <Box sx={{ display: { md: "flex" }, mt: 12, gap: 15 }}>
+          <Box sx={{ width: { md: "65%" } }}>
             <Typography variant="h4" sx={{ mb: 3 }}>
               Get to know me!
             </Typography>
@@ -45,7 +45,7 @@ function About() {
               skills and experience then don&apos;t hesitate to contact me.
             </Typography>
 
-            <Link to="Contact" smooth={true} duration={1500}>
+            <Link to="Contact" smooth={true} duration={1500} offset={-70}>
               <Button
                 variant="contained"
                 sx={{
@@ -67,7 +67,7 @@ function About() {
             </Link>
           </Box>
 
-          <Box sx={{ width: { md: "50%" } }}>
+          <Box sx={{ width: { md: "35%" } }}>
             <Box>
               <Typography
                 sx={{

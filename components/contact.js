@@ -46,7 +46,7 @@ function Contact() {
 
   return (
     <Element id="Contact" name="Contact">
-      <Box>
+      <Box sx={{ px: "10%" }}>
         <Typography
           variant="h3"
           sx={{
@@ -72,7 +72,13 @@ function Contact() {
           </Typography>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "center", mb: 15, mt: 6 }}>
-          <Box sx={{ bgcolor: "white", width: "45%", borderRadius: 4 }}>
+          <Box
+            sx={{
+              bgcolor: "white",
+              width: { xs: "100%", md: "85%", lg: "800px" },
+              borderRadius: 4,
+            }}
+          >
             <form
               onSubmit={sendEmail}
               style={{
