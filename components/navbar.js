@@ -48,7 +48,7 @@ function Navbar() {
   return (
     <AppBar position="static" sx={{ bgcolor: "#FFFFFF", boxShadow: "none", height: "9vh" }}>
       <Container maxWidth="xl">
-        <Toolbar sx={{ mt: 1.6 }} disableGutters>
+        <Toolbar sx={{ mt: { xs: 1, sm: 1.6 } }} disableGutters>
           <Avatar alt="Remy Sharp" src={avatar.src} sx={{ width: 40, height: 40, mr: 2 }} />
           <Typography
             variant="h6"
