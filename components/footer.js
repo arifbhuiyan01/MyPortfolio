@@ -7,18 +7,18 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 function Footer() {
   return (
-    <Box sx={{ bgcolor: "black", color: "white", pt: 12, pb: 8 }}>
-      <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+    <Box sx={{ bgcolor: "black", color: "white", pt: 12, pb: 8, px: 4 }}>
+      <Box sx={{ display: { md: "flex" }, justifyContent: "space-around" }}>
         <Box>
           <Typography sx={{ fontWeight: "bold" }} variant="h5">
             ARIF RAHMAN
           </Typography>
-          <Typography sx={{ width: "600px", mt: 2 }} variant="body1">
+          <Typography sx={{ maxWidth: "600px", mt: 2 }} variant="body1">
             A Frontend focused Web Developer building the Frontend of Websites and Web Applications
             that leads to the success of the overall product
           </Typography>
         </Box>
-        <Box>
+        <Box sx={{ mt: 2 }}>
           <Typography sx={{ fontWeight: "bold" }} variant="h5">
             SOCIAL
           </Typography>

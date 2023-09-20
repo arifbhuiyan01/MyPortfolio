@@ -114,7 +114,26 @@ function Navbar() {
             >
               {pages.map((page) => (
                 <MenuItem sx={{ width: "100vw" }} key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="end">{page}</Typography>
+                  <Link to={""} key={page}>
+                    <Button
+                      onClick={() => {
+                        scrollToSection(`${page}`);
+                        handleCloseNavMenu();
+                      }}
+                      sx={{
+                        m: 1,
+                        color: "white",
+                        display: "block",
+                        color: "black",
+                        "&:hover": {
+                          color: "#FACF0F",
+                          backgroundColor: "#FFFFFF",
+                        },
+                      }}
+                    >
+                      {page}
+                    </Button>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
